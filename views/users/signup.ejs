@@ -1,0 +1,45 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="middle">
+  <div class="roomzy-form-container">
+    <div class="roomzy-form-card">
+      <h2 class="roomzy-form-title">Create an Account</h2>
+      <form action="/signup" method="post" class="roomzy-signup-form">
+        <div class="roomzy-form-group">
+          <label for="username" class="roomzy-label">Name</label>
+          <input
+            name="username"
+            id="username"
+            class="roomzy-input"
+            placeholder="Enter username"
+            type="text"
+            required
+          />
+        </div>
+        <div class="roomzy-form-group">
+          <label for="email" class="roomzy-label">Email</label>
+          <input
+            name="email"
+            id="email"
+            class="roomzy-input"
+            placeholder="Enter email"
+            type="email"
+            required
+          />
+        </div>
+        <div class="roomzy-form-group">
+          <label for="password" class="roomzy-label">Password</label>
+          <input
+            name="password"
+            id="password"
+            class="roomzy-input"
+            placeholder="Enter password"
+            type="password"
+            required
+          />
+        </div>
+        <button type="submit" class="roomzy-btn-signup">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>

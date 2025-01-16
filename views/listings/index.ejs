@@ -1,0 +1,108 @@
+    <% layout("/layouts/boilerplate") %>
+    <div id="filters" class="filters-container">
+        <button id="scrollLeft" class="scroll-btn left">&#10094;</button>
+        <div class="filters-wrapper">
+            <a href="/listings?filter=trending">
+                <div class="filters">
+                    <div><i class="fa-solid fa-fire"></i></div>
+                    <p>Trending</p>
+                </div>
+            </a>
+            <a href="/listings?filter=top-cities">
+                <div class="filters">
+                    <div><i class="fa-solid fa-city"></i></div>
+                    <p>Top cities</p>
+                </div>
+            </a>
+            <a href="/listings?filter=rooms">
+                <div class="filters">
+                    <div><i class="fa-solid fa-bed-pulse"></i></div>
+                    <p>Rooms</p>
+                </div>
+            </a>
+            <a href="/listings?filter=castle">
+                <div class="filters">
+                    <div><i class="fa-brands fa-fort-awesome"></i></div>
+                    <p>Castles</p>
+                </div>
+            </a>
+            <a href="/listings?filter=arctic">
+                <div class="filters">
+                    <div><i class="fa-regular fa-snowflake"></i></div>
+                    <p>Arctic</p>
+                </div>
+            </a>
+            <a href="/listings?filter=farm">
+                <div class="filters">
+                    <div><i class="fa-solid fa-tractor"></i></div>
+                    <p>Farms</p>
+                </div>
+            </a>
+            <a href="/listings?filter=historical">
+                <div class="filters">
+                    <div><i class="fa-solid fa-gopuram"></i></div>
+                    <p>Historical homes</p>
+                </div>
+            </a>
+            <a href="/listings?filter=snow">
+                <div class="filters">
+                    <div><i class="fa-solid fa-person-snowboarding"></i></div>
+                    <p>Snow</p>
+                </div>
+            </a>
+            <a href="/listings?filter=mountain">
+                <div class="filters">
+                    <div><i class="fa-solid fa-mountain"></i></div>
+                    <p>Mountain</p>
+                </div>
+            </a>
+            <a href="/listings?filter=beach">
+                <div class="filters">
+                    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <p>Beach</p>
+                </div>
+            </a>
+            <a href="/listings?filter=pools">
+                <div class="filters">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Amazing pools</p>
+                </div>
+            </a>
+            <a href="/listings?filter=camp">
+                <div class="filters">
+                    <div><i class="fa-solid fa-campground"></i></div>
+                    <p>Camping</p>
+                </div>
+            </a>
+        </div>
+        <button id="scrollRight" class="scroll-btn right">&#10095;</button>
+    </div>
+    <div class="javaclass">
+        <div><h3>Choose your Destination</h3></div>
+        <div class="tax-toggle">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input  tax-switch" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label tax-label" for="flexSwitchCheckDefault">Display before taxes</label>
+            </div>
+        </div>
+    </div>
+        <!-- <h3>Choose Your Destination</h3> -->
+        <div class="container">
+            <div class="row row-cols-lg-3 row-cols-md-2 g-4">
+                    <% for(let listing of allListings) { %>
+                    <a href="/listings/<%= listing.id  %>" class="show-card">
+                    <div class="col">
+                        <div class="card mb-3 h-100" style="border: none;">
+                            <img src="<%= listing.image.url %>" class="rounded card-img-top " alt="image">
+                            <div class="card-body">
+                                <h6 class="card-title"><%= listing.title %></h6>
+                                <p class="card-text">&#8360;<%= listing.price %>/night &nbsp;<i class="tax-info"> +18 GST</i></p>
+                                <p class="card-text text-truncate"><%= listing.description %></p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    <% } %>
+                </div>
+            </div>
+            

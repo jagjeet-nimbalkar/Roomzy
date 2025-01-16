@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+<div id="filters" class="filters-container">
+    <button id="scrollLeft" class="scroll-btn left">&#10094;</button>
+    <div class="filters-wrapper">
+        <div class="filters">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-city"></i></div>
+            <p>Top cities</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-bed-pulse"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-regular fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-tractor"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-gopuram"></i></div>
+            <p>Historical homes</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-person-snowboarding"></i></div>
+            <p>Snow</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountain</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-umbrella-beach"></i></div>
+            <p>Beach</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing pools</p>
+        </div>
+        <div class="filters">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </div>
+    </div>
+    <button id="scrollRight" class="scroll-btn right">&#10095;</button>
+</div>
+<div class="javaclass">
+    <div><h3>Search Results for "<%= query %>"</h3></div>
+    <% if (results.length === 0) { %>
+        <p>No listings found for "<%= query %>". Please try a different search term.</p>
+    <% } %>
+</div>
+<div class="container">
+    <div class="row row-cols-lg-3 row-cols-md-2 g-4">
+        <% results.forEach(listing => { %>
+        <a href="/listings/<%= listing._id %>" class="show-card">
+            <div class="col">
+                <div class="card mb-3 h-100" style="border: none;">
+                    <img src="<%= listing.image.url %>" class="rounded card-img-top" alt="image">
+                    <div class="card-body">
+                        <h6 class="card-title"><%= listing.title %></h6>
+                        <p class="card-text">&#8360;<%= listing.price %>/night &nbsp;<i class="tax-info"> +18 GST</i></p>
+                        <p class="card-text text-truncate"><%= listing.description %></p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <% }); %>
+    </div>
+</div>

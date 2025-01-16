@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/listings">
+            <i class="fa-solid fa-compass"></i> 
+            ROOMZY
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ">
+                <a class="nav-link" href="/listings">Explore</a>
+            </div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <form class="d-flex custom-search-form position-relative" method="get" action="/listings/search">
+                        <i class="fa-solid fa-magnifying-glass position-absolute search-icon"></i>
+                        <input type="search" name="query" class="form-control custom-search-input ps-5" placeholder="Search" aria-label="Search">
+                        <button class="btn custom-search-button" type="submit">Search</button>
+                      </form>                      
+                </li>
+            </ul>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/listings/new">Roomzy your home</a>
+                <% if(!currUser) {%>
+                    <a class="nav-link" href="/login"><b>Login</b></a>
+                    <a class="nav-link " aria-current="page" href="/signup"><b>Signup</b></a>
+                <% } %>
+                <% if(currUser) {%>
+                    <a class="nav-link" href="/logout"><b>Logout</b></a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>
